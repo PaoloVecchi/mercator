@@ -238,8 +238,8 @@ return [
             'room_helper' => '',
             'storage_devices' => 'Storage devices',
         ],
-        'title' => 'Bays',
-        'title_singular' => 'Bay',
+        'title' => 'Racks',
+        'title_singular' => 'Rack',
     ],
     'building' => [
         'description' => 'Location of people or resources within a site.',
