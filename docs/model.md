@@ -312,7 +312,7 @@ Table *m_applications* :
 | entity_resp_id  | int unsigned | Entity responsible |
 | responsible         | varchar(255) | Person/team responsible |
 | functional_referent        | varchar(255) | Functional referent |
-| editor         | varchar(255) | Application's editor |
+| editor         | varchar(255) | Application's publisher |
 | application_block_id | int unsigned | Group of application |
 | install_date    | datetime    | Date of installation |
 | update_date     | datetime    | Date of upgrade |
