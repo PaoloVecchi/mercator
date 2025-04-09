@@ -23,8 +23,9 @@ Table *data_processing* :
 | purpose | longtext | Purposes of processing |
 | categories | longtext | Categories of recipients |
 | recipients | longtext | Data recipients |
-| transfer | longtext | Data transfers |
+| transfert | longtext | Data transfers |
 | retention | longtext | Retention periods |
+| controls | longtext | Security controls |
 | created_at | timestamp | Date of creation |
 | updated_at | timestamp | Date of update |
 | deleted_at | timestamp | Date of deletion |
@@ -77,6 +78,7 @@ Table *entities* :
 | security_level    | longtext      | Security level |
 | contact_point     | longtext      | Contact point |
 | description       | longtext      | Entity description |
+| icon_id           | int | Pointer to icon |
 | created_at        | timestamp     | Date of creation |
 | updated_at        | timestamp     | Date of update |
 | deleted_at        | timestamp     | Date of deletion |
@@ -155,7 +157,7 @@ Table *processes* :
 | Field | Type | Description |
 |:----------------|:-------------|:-----------------|
 | id | int unsigned | auto_increment |
-| identifier | varchar(255) | Process name |
+| name | varchar(255) | Process name |
 | description | longtext | Process description |
 | owner | varchar(255) | Process owner |
 | in_out | longtext | incoming and outgoing elements |
@@ -194,6 +196,7 @@ Table *operations* :
 | id | int unsigned | auto_increment |
 | name | varchar(255) | Name of operation |
 | description | longtext | Description of operation |
+| process_id | int unsigned | Related process |
 | created_at | timestamp | Date of creation |
 | updated_at | timestamp | Date of update |
 | deleted_at | timestamp | Date of deletion |
@@ -251,6 +254,7 @@ Table *information* :
 | security_need_t | int | Traceability |
 | sensitivity | varchar(255) | Sensitivity of information |
 | constraints | longtext | Legal and regulatory constraints |
+| retention | varchar(255) | Retention period |
 | created_at | timestamp | Date of creation |
 | updated_at | timestamp | Date of update |
 | deleted_at | timestamp | Date of deletion |
@@ -379,6 +383,7 @@ Table *databases* :
 | security_need_i | int          | Integrity |
 | security_need_a | int          | Availability |
 | security_need_t | int          | Traceability |
+| security_need_auth | int          | Authenticity |
 | external        | varchar(255) | External |
 | entity_resp_id  | int unsigned | Entité responsable  |
 | created_at      | timestamp    | Date of creation |
@@ -410,6 +415,7 @@ Table *fluxes* :
 | database_dest_id      | int unsigned | Link to destination database |
 | crypted               | tinyint(1)   | The flow is encrypted (1=yes, O=no) |
 | bidirectional         | tinyint(1)   | The flow is bydirectional (1=yes, O=no)|
+| nature                  | varchar(255) | Nature of the flow |
 | created_at            | timestamp    | Date of creation |
 | updated_at            | timestamp    | Date of update |
 | deleted_at            | timestamp    | Date of deletion |
@@ -500,6 +506,7 @@ Table *networks* :
 | security_need_i | int          | Integrity |
 | security_need_a | int          | Availability |
 | security_need_t | int          | Traceability |
+| security_need_auth | int          | Authenticity |
 | created_at      | timestamp    | Date of creation |
 | updated_at      | timestamp    | Date of update |
 | deleted_at      | timestamp    | Date of deletion |
